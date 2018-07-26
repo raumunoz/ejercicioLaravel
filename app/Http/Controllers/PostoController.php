@@ -26,8 +26,8 @@ class PostoController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('posts.create');
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +37,12 @@ class PostoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //request
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required',
+        ]);
+        return 123;
     }
 
     /**

@@ -8,11 +8,11 @@
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/LARAVEL/lsapp/public/about">About</a>
+              <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/services">Services</a>
-              <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/posts">Posts</a>
+              <a class="nav-link disabled" href="/services">Services</a>
+              <a class="nav-link disabled" href="/posts">Posts</a>
             </li>
 
           </ul>
