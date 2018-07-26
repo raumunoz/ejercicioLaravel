@@ -28,3 +28,4 @@ Route::get('about', function () {
 Route::get('/user/{id}/{name}', function ($id,$name) {
     return 'este es el usario '.$name. " con un id de ".$id;
 });
+Route::resource('posts','PostoController');

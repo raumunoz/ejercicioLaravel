@@ -12,6 +12,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/services">Services</a>
+              <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/posts">Posts</a>
             </li>
 
           </ul>
