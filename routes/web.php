@@ -29,3 +29,7 @@ Route::get('/user/{id}/{name}', function ($id,$name) {
     return 'este es el usario '.$name. " con un id de ".$id;
 });
 Route::resource('posts','PostoController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

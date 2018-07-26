@@ -15,7 +15,7 @@ class PostoController extends Controller
     public function index()
     {
         //regresa todos os datos de la base de datos
-        $post= Post::all();
+        $post= Post::orderBy('title','desc')->paginate(10);
         return view('posts.index')->with('posts',$post);
     }
 
@@ -26,8 +26,8 @@ class PostoController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('posts.create');
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +37,16 @@ class PostoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //request
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required',
+        ]);
+        $post = new Post;
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->save();
+        return redirect('/posts')->with('sucess','Post created');
     }
 
     /**
@@ -62,6 +71,8 @@ class PostoController extends Controller
     public function edit($id)
     {
         //
+        $post =Post::find($id);
+        return view('posts.edit')->with('post',$post);
     }
 
     /**
@@ -74,6 +85,17 @@ class PostoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[
+            'title'=>'required',
+            'body'=>'required',
+        ]);
+        $post = new Post;
+        $post->title=$request->input('title');
+        $post->body=$request->input('body');
+        $post->save();
+
+        return redirect('/posts')->with('sucess','Post Upadted');
+
     }
 
     /**
@@ -84,6 +106,8 @@ class PostoController extends Controller
      */
     public function destroy($id)
     {
-        
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/posts')->with('sucess','Post Removed');
     }
 }

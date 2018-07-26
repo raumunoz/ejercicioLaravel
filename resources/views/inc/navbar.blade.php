@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-        <a class="navbar-brand"  href="http://localhost/LARAVEL/lsapp/public/" >Home</a>
+        <a class="navbar-brand"  href="/" >Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,13 +8,15 @@
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/LARAVEL/lsapp/public/about">About</a>
+              <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/services">Services</a>
-              <a class="nav-link disabled" href="http://localhost/LARAVEL/lsapp/public/posts">Posts</a>
+              <a class="nav-link disabled" href="/services">Services</a>
+              <a class="nav-link disabled" href="/posts">Posts</a>
             </li>
-
+            <li>
+              <a href="/posts/create" class="nav-link disabled">Create post</a>
+            </li>
           </ul>
         </div>
       </nav>
