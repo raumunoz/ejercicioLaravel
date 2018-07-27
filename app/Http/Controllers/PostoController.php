@@ -45,6 +45,7 @@ class PostoController extends Controller
         $post = new Post;
         $post->title=$request->input('title');
         $post->body=$request->input('body');
+        $post->user_id=auth()->user()->id;
         $post->save();
         return redirect('/posts')->with('sucess','Post created');
     }
@@ -108,6 +109,6 @@ class PostoController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect('/posts')->with('sucess','Post Removed');
+        return redirect('/posts')->with('sucess','Post Romoved');
     }
 }
